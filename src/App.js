@@ -97,12 +97,27 @@ class App extends React.Component {
         })
      }
    }
-    
+   
+   handleSearch = (e) => {
+      const value = e.target.value;
+      const name = e.target.name;
+      this.setState({
+         [name]: value
+      });
+      this.setState({employees: [...this.state.employees.filter(employee => employee.name.includes(this.state.search))]})
+
+   };
+
+  
 
    render() {
       return (
          <div className="text-center">
-           <Header/> 
+           <Header 
+           value={this.state.search}
+           handleSearch={this.handleSearch}
+           
+           /> 
          <Table handleSortID={this.handleSortID} handleSortPhone={this.handleSortPhone} handleSortEmail={this.handleSortEmail} handleSortName={this.handleSortName}> 
          <EmployeeDirectory employees={this.state.employees} />
          </Table>

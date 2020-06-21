@@ -6,8 +6,16 @@ function Header(props) {
     Welcome to Employee Directory</h2>
 
     <form className="form-inline">
-    <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-    <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    <input 
+    onChange={props.handleSearch}
+    value={props.value}
+    name="search"
+    type="text"
+    className="form-control"
+    placeholder="Search For an Employee"
+    id="search"
+    />
+    
     </form>
   </nav>
   
