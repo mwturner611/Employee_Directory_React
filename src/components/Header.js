@@ -2,7 +2,7 @@ import React from "react";
 
 function Header(props) {
     return <nav className="navbar navbar-light bg-light">
-    <h2><i class="fa fa-users" aria-hidden="true"></i>{' '}
+    <h2><i className="fa fa-users" aria-hidden="true"></i>{' '}
     Welcome to Employee Directory</h2>
 
     <form className="form-inline">
