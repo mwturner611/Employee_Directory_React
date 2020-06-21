@@ -4,10 +4,10 @@ function Table(props) {
     return <table className="table">
             <thead className="thead-light">
                 <tr>
-                    <th scope="col">ID#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Phone</th>
+                    <th scope="col">ID# <i class="fa fa-sort" aria-hidden="true"></i></th>
+                    <th scope="col">Name <i class="fa fa-sort" aria-hidden="true"></i></th>
+                    <th scope="col">Email <i class="fa fa-sort" aria-hidden="true"></i></th>
+                    <th scope="col">Phone <i class="fa fa-sort" aria-hidden="true"></i></th>
                 </tr>
             </thead>
             <tbody>
