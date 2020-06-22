@@ -103,10 +103,19 @@ class App extends React.Component {
       const name = e.target.name;
       this.setState({
          [name]: value
-      });
-      this.setState({employees: [...this.state.employees.filter(employee => employee.name.includes(this.state.search))]})
-
+      })
+      
    };
+
+   handleSubmit = (e) => {
+      e.preventDefault();
+      if (this.state.search === ""){
+         this.searchEmployees();
+      }
+      else{
+      this.setState({employees: [...this.state.employees.filter(employee => employee.name.includes(this.state.search))]})
+   }
+   }
 
   
 
@@ -116,6 +125,7 @@ class App extends React.Component {
            <Header 
            value={this.state.search}
            handleSearch={this.handleSearch}
+           handleSubmit={this.handleSubmit}
            
            /> 
          <Table handleSortID={this.handleSortID} handleSortPhone={this.handleSortPhone} handleSortEmail={this.handleSortEmail} handleSortName={this.handleSortName}> 

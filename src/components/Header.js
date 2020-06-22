@@ -7,6 +7,7 @@ function Header(props) {
 
     <form className="form-inline">
     <input 
+    style={{margin:'5px'}}
     onChange={props.handleSearch}
     value={props.value}
     name="search"
@@ -15,6 +16,13 @@ function Header(props) {
     placeholder="Search For an Employee"
     id="search"
     />
+    <button 
+    className="btn btn-outline-success my-2 my-sm-0" 
+    type="submit"
+    onClick={props.handleSubmit} 
+    style={{ padding:'5px',margin:'5px' }}>
+      Search
+      </button>
     
     </form>
   </nav>
