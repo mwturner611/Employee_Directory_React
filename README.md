@@ -1,26 +1,24 @@
 <img alt="License" src="https://img.shields.io/badge/-MIT License-blue">
 
 # employee_directory_react
-###### Description
+#### Description
 <p>This React based application allows you to sort and search through an employee list generated from an axios call</p>
 
 ## Technology
 React.js, axios, react-router, JavaScript, and CSS.
 
-# Demo
-<img src="public/assets/images/demo.gif">
-
-
 ## Table of Contents
 * [Top of Page](#description)
-* [Technology](#tecknology)
-* [Gif](#tecknology)
+* [Technology](#technology)
+* [Gif](#demo)
 * [Usage](#usage)
 * [Credits](#credits)
 * [License](#license)
 * [Contributing](#contributing)
 * [Contacts](#contacts)
 
+# Demo
+<img src="public/assets/images/demo.gif">
 
 ## Usage 
 1. By default the main page will display all employee retrieved from an axios call 
