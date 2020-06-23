@@ -5,8 +5,9 @@ import Table from './components/Table';
 import Header from './components/Header';
 import API from "./util/API";
 
-
+// main app class
 class App extends React.Component {
+   // states
    state = {
       employees:[],
       search: "",
@@ -16,16 +17,19 @@ class App extends React.Component {
       sortPhone: false
   };
 
+//   calls axios search function
     searchEmployees = () => {
         API.search()
         .then(res => this.setState({employees: res.data}))
         .catch(err => console.log(err));
     }
 
+   //  performs search for all employees on load
     componentDidMount(){
        this.searchEmployees();
     }
    
+   //  sort by id function, reversing then resorting on alternating clicks
     handleSortID = () => {
        const idSort = this.state.employees;
       if (!this.state.sortID){
@@ -44,6 +48,7 @@ class App extends React.Component {
       }
     }
 
+       //  sort by name function, reversing then resorting on alternating clicks
     handleSortName = () => {
       const nameSort = this.state.employees;
      if (!this.state.sortName){
@@ -62,6 +67,7 @@ class App extends React.Component {
      }
    }
 
+      //  sort by email function, reversing then resorting on alternating clicks
    handleSortEmail = () => {
       const emailSort = this.state.employees;
      if (!this.state.sortEmail){
@@ -80,6 +86,7 @@ class App extends React.Component {
      }
    }
 
+      //  sort by phone function, reversing then resorting on alternating clicks
    handleSortPhone = () => {
       const phoneSort = this.state.employees;
      if (!this.state.sortPhone){
@@ -98,6 +105,7 @@ class App extends React.Component {
      }
    }
    
+      //  update the state.search value instantly as input is entered in form
    handleSearch = (e) => {
       const value = e.target.value;
       const name = e.target.name;
@@ -107,6 +115,7 @@ class App extends React.Component {
       
    };
 
+   // onClick take the contents of the input and use it to filter employees returned
    handleSubmit = (e) => {
       e.preventDefault();
       if (this.state.search === ""){
@@ -118,9 +127,10 @@ class App extends React.Component {
    }
 
   
-
+// render class
    render() {
       return (
+         // create the header component that also contains the search function
          <div className="text-center">
            <Header 
            value={this.state.search}
@@ -128,7 +138,10 @@ class App extends React.Component {
            handleSubmit={this.handleSubmit}
            
            /> 
+
+           {/*table component that displays all employees  */}
          <Table handleSortID={this.handleSortID} handleSortPhone={this.handleSortPhone} handleSortEmail={this.handleSortEmail} handleSortName={this.handleSortName}> 
+         {/* bring in the employee list inside table */}
          <EmployeeDirectory employees={this.state.employees} />
          </Table>
 

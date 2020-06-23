@@ -1,5 +1,6 @@
 import React from "react";
 
+// setup the table headers with sort functionality in each
 function Table(props) {
     return <table className="table">
             <thead className="thead-light">

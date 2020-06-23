@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 
-
+// create an individual row on the employee table for each employee
 export class EmployeeList extends Component {
     render() {
         return (
